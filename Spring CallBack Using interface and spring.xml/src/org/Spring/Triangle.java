@@ -7,9 +7,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-//public class Triangle implements InitializingBean,DisposableBean{
-	public class Triangle {
-
+public class Triangle implements InitializingBean, DisposableBean {
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
@@ -43,19 +41,21 @@ import org.springframework.context.ApplicationContextAware;
 		return "Triangle [pointA=" + pointA + ", pointB=" + pointB + ", pointC=" + pointC + "]";
 	}
 
-/*	@Override
+	@Override
 	public void destroy() throws Exception {
 		System.out.println("The Destroy bean has been executed");
 	}
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		System.out.println("The Inititlization bean has been executed");		
-	}*/
-	public void init(){
+		System.out.println("The Inititlization bean has been executed");
+	}
+
+	public void initMethod() {
 		System.out.println("intialization method");
 	}
-	public void destroy(){
+
+	public void destroyMethod() {
 		System.out.println("destruction method");
 	}
 }
